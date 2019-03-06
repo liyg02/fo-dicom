@@ -65,12 +65,12 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.XML" />
     <Reference Include="WindowsBase" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="xunit.assert, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.assert.2.3.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
@@ -118,6 +118,7 @@
     <Compile Include="Bugs\GH597.cs" />
     <Compile Include="Bugs\GH625.cs" />
     <Compile Include="Bugs\GH626.cs" />
+    <Compile Include="Bugs\GH745.cs" />
     <Compile Include="Bugs\VideoCStoreProvider.cs" />
     <Compile Include="DicomAnonymizerTest.cs" />
     <Compile Include="DicomDatasetExtensionsTest.cs" />
@@ -129,12 +130,14 @@
     <Compile Include="DicomDictionaryTest.cs" />
     <Compile Include="DicomFileMetaInformationTest.cs" />
     <Compile Include="DicomParseableTest.cs" />
+    <Compile Include="DicomTransferSyntaxTest.cs" />
     <Compile Include="DicomUIDGeneratorTest.cs" />
     <Compile Include="Helpers\NLogHelper.cs" />
     <Compile Include="Helpers\PriorityOrderer.cs" />
     <Compile Include="Helpers\TestOutputHelperLogger.cs" />
     <Compile Include="Helpers\TestPriorityAttribute.cs" />
     <Compile Include="Imaging\Codec\DicomCodecExtensionsTest.cs" />
+    <Compile Include="Imaging\FrameGeometryTest.cs" />
     <Compile Include="Imaging\ColorTableTest.cs" />
     <Compile Include="Imaging\DicomImageTest.cs" />
     <Compile Include="Imaging\DicomOverlayDataTest.cs" />
@@ -224,8 +227,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
+    <None Include="packages.config" />
+    <None Include="Test Data\10200904.dcm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Test Data\D_CLUNIE_CT1_RLE_FRAGS.dcm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -297,6 +301,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Test Data\GH626.dcm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Test Data\IM-0001-0001-0001.dcm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Test Data\minimumdict.xml.gz">
